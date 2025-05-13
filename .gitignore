@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+#extra datasets
+**metadata
+
+#potentially confidential
+*FJORD_pcod_spies*

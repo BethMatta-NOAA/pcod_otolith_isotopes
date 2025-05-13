@@ -1,0 +1,95 @@
+---
+title: "Stable isotope analysis of Gulf of Alaska Pacific cod otoliths"
+format: html
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r setup}
+
+source("O18_fjord_pcod.R") #main script
+library(kableExtra)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "") #prevent figures from floating
+
+```
+
+##### Contributors (Age and Growth Program)
+
+Beth Matta, Kali Stone, Brenna Hsieh, Kathrin Bayer, Derek Chamberlin
+
+[**This document is preliminary; please check all statements highlighted in red for accuracy.**]{style="color:red;"}
+
+## Background
+
+This report describes an analysis of stable isotopes (oxygen-18 and carbon-13) in otoliths of Pacific cod collected inside and outside fjord habitats in Cook Inlet and Prince William Sound in the Gulf of Alaska. This is a supplementary analysis to a larger genetics project exploring whether Pacific cod are locally adapted to these important coastal habitats. Otoliths were analyzed to determine whether thermal experience differs significantly inside and outside fjords. Otoliths are inert, calcium carbonate structures in the head that start forming before hatching and continue growing until death, thereby providing a lifetime record of experienced conditions. Oxygen-18 varies inversely with temperature, and carbon-13 is influenced by dietary carbon sources, metabolic rate, and potentially, hypoxic conditions. [(A more thorough review of the existing literature is needed before drawing conclusions regarding carbon-13 results presented herein.)]{style="color:red;"}
+
+## Methods
+
+Otoliths (sagittae) were collected by a port sampler from commercial catches of Pacific cod inside and outside fjord habitats in Prince William Sound and Cook Inlet. Otoliths were cleaned of residual tissue, dried, and stored in [paper envelopes]{style="color:red;"} before being transferred to glass vials. Prior to further analysis, otoliths were sonicated in Nanopure water for [5 minutes]{style="color:red;"} and allowed to air dry. Using a glass mortar and pestle, one otolith from each pair was ground to a fine powder, wrapped in clean aluminum foil, and sent to the University of Arizona's [Lab Name]{style="color:red;"} for analysis of oxygen-18 ($\delta$^18^O) and carbon-13 ($\delta$^13^C) isotopes. The mortar and pestle was wiped clean using 95% reagent-grade ethanol between grinding each otolith to avoid cross-contamination. Only fish with two intact otoliths were included in this analysis (the other otolith from each pair was saved for potential future image analysis and age determination).
+
+[Add more info about U of A methods]{style="color:red;"}
+
+Values of $\delta$^18^O and $\delta$^13^C are reported in per mille Vienna Pee Dee Belemnite (`r symbol(135)` VPDB).
+
+## Preliminary results
+
+Otoliths from `r nrow(data)` fish were analyzed for stable isotopes (@tbl-means-table). Analytical precision (1 $\sigma$) of values was `r symbol(129)`0.11 for $\delta$^18^O and `r symbol(129)`0.08 for $\delta$^13^C.
+
+```{r}
+#| label: tbl-means-table
+#| tbl-cap: Otolith stable isotope values of Pacific cod from inside and outside fjords in Cook Inlet (CI) and Prince William Sound (PWS)
+kable(means.table, row.names = FALSE, digits = 2,
+      col.names = c("Location", "Mean O18", "SD O18", "Mean C13", "SD C13", "Count")) %>% 
+  kable_styling(font_size = 10, full_width = T)
+#|
+
+```
+
+Fish were generally bigger outside fjords than inside fjords, though size ranges overlapped (@fig-lengths-box).
+
+```{r fig-lengths-box}
+#| fig-cap: Length distributions of Pacific cod inside and outside fjords in Cook Inlet (CI) and Prince William Sound (PWS).
+#| 
+lengths.box
+
+```
+
+
+
+Values of $\delta$^18^O were similar across areas, but those of $\delta$^13^C were consistently higher outside fjords (@fig-isotopes-box), apparently even when accounting for potential ontogenetic changes in diet (@fig-isotopes-lm).
+
+
+
+```{r fig-isotopes-box}
+#| fig-cap: Otolith stable isotope values of Pacific cod inside and outside fjords in Cook Inlet (CI) and Prince William Sound (PWS).
+#| fig-height: 8
+library(patchwork)
+
+c13.box / o18.box +
+  plot_layout(guides = "collect")
+
+```
+
+```{r fig-isotopes-lm}
+#| fig-cap: Relationships between fish length and otolith stable isotopes of Pacific cod inside and outside fjords in Cook Inlet (CI) and Prince William Sound (PWS).
+#| fig-height: 8
+
+c13.length.lm / o18.length.lm  +
+  plot_layout(guides = "collect")
+
+```
+
+
+## Potential next steps
+
+* Parse out data into Site (Cook Inlet, Prince William Sound) and Habitat Type (Inside/Outside Fjords) and determine if above conclusion holds (multiple regression). Also consider PCA or discriminant analysis if there's sufficient data (do isotope values reflect provenience?)
+* Estimate temperature (average lifetime thermal experience) from O18 values (use species-specific fractionation equation from Craig's experimental work)
+* Decide whether to age these fish or perform image analysis
+* Compare with conclusions from genetics study
+* Review literature for interpretation of C13 in fish otoliths
+
+[**Anything else I'm forgetting??**]{style="color:red;"}
+
+
