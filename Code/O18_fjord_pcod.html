@@ -69,13 +69,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="contributors" class="level5">
 <h5 class="anchored" data-anchor-id="contributors">Contributors</h5>
-<p>Beth Matta, Kali Stone, Brenna Hsieh, Kathrin Bayer, Derek Chamberlin - Age and Growth Program</p>
+<p>Beth Matta, Kali Stone, Brenna Hsieh, Kathrin Bayer, Derek Chamberlin, Esther Goldstein - Age and Growth Program</p>
 <p>Ingrid Spies, Laura Timm, Sarah Schaal</p>
 <p><span style="color:red;"><strong>This document is preliminary; please check all statements highlighted in red for accuracy.</strong></span></p>
 </section>
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>This report describes an analysis of stable isotopes (oxygen-18 and carbon-13) in otoliths of Pacific cod collected inside and outside fjord habitats in Cook Inlet and Prince William Sound in the Gulf of Alaska. This is a supplementary analysis to a larger genetics project exploring whether Pacific cod are locally adapted to these important coastal habitats. Otoliths were analyzed to determine whether thermal experience differs significantly inside and outside fjords. Otoliths are inert, calcium carbonate structures in the head that start forming before hatching and continue growing until death, thereby providing a lifetime record of experienced conditions. Oxygen-18 varies inversely with temperature, and carbon-13 is influenced by dietary carbon sources, metabolic rate, and potentially, hypoxic conditions. <span style="color:red;">(A more thorough review of the existing literature is needed before drawing conclusions regarding carbon-13 results presented herein.)</span></p>
+<p>This report describes an analysis of stable isotopes (oxygen-18 and carbon-13) in otoliths of Pacific cod collected inside and outside fjord habitats in Cook Inlet and Prince William Sound in the Gulf of Alaska. This is a supplementary analysis to a larger genetics project exploring whether Pacific cod are locally adapted to these important coastal habitats. Otoliths were analyzed to determine whether thermal experience differs significantly inside and outside fjords. Otoliths are inert, calcium carbonate structures in the head that start forming before hatching and continue growing until death, thereby providing a lifetime record of experienced conditions. Oxygen-18 varies inversely with temperature. Carbon-13 is influenced by dietary carbon sources, metabolic rate, dissolved inorganic carbon in the ambient water, and potentially, hypoxic conditions.</p>
 </section>
 <section id="methods" class="level2">
 <h2 class="anchored" data-anchor-id="methods">Methods</h2>
@@ -104,34 +104,34 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
   <tr>
    <td style="text-align:left;"> CI-inside </td>
-   <td style="text-align:right;"> -0.85 </td>
-   <td style="text-align:right;"> 0.31 </td>
    <td style="text-align:right;"> 1.57 </td>
    <td style="text-align:right;"> 0.26 </td>
+   <td style="text-align:right;"> -0.85 </td>
+   <td style="text-align:right;"> 0.31 </td>
    <td style="text-align:right;"> 11 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> CI-outside </td>
-   <td style="text-align:right;"> -1.02 </td>
-   <td style="text-align:right;"> 0.47 </td>
    <td style="text-align:right;"> 1.94 </td>
    <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> -1.02 </td>
+   <td style="text-align:right;"> 0.47 </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> PWS-inside </td>
-   <td style="text-align:right;"> -1.04 </td>
-   <td style="text-align:right;"> 0.41 </td>
    <td style="text-align:right;"> 1.56 </td>
+   <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> -1.04 </td>
    <td style="text-align:right;"> 0.41 </td>
    <td style="text-align:right;"> 41 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> PWS-outside </td>
-   <td style="text-align:right;"> -0.96 </td>
-   <td style="text-align:right;"> 0.48 </td>
    <td style="text-align:right;"> 1.89 </td>
    <td style="text-align:right;"> 0.35 </td>
+   <td style="text-align:right;"> -0.96 </td>
+   <td style="text-align:right;"> 0.48 </td>
    <td style="text-align:right;"> 38 </td>
   </tr>
 </tbody>
@@ -151,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Values of <span class="math inline">\(\delta\)</span><sup>18</sup>O were similar across areas, but those of <span class="math inline">\(\delta\)</span><sup>13</sup>C were consistently higher outside fjords (<a href="#fig-isotopes-box">Figure&nbsp;2</a>), apparently even when accounting for potential ontogenetic changes in diet (<a href="#fig-isotopes-lm">Figure&nbsp;3</a>).</p>
+<p>Values of <span class="math inline">\(\delta\)</span><sup>13</sup>C were similar across areas, but those of <span class="math inline">\(\delta\)</span><sup>18</sup>O were consistently higher outside fjords (<a href="#fig-isotopes-box">Figure&nbsp;2</a>), and independent of fish length (<a href="#fig-isotopes-lm">Figure&nbsp;3</a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-isotopes-box" class="quarto-figure quarto-figure-center anchored">
@@ -176,11 +176,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="potential-next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="potential-next-steps">Potential next steps</h2>
 <ul>
-<li>Parse out data into Site (Cook Inlet, Prince William Sound) and Habitat Type (Inside/Outside Fjords) and determine if above conclusion holds (multiple regression). Also consider PCA or discriminant analysis if there’s sufficient data (do isotope values reflect provenience?)</li>
+<li>Parse out data into Site (Cook Inlet, Prince William Sound) and Habitat Type (Inside/Outside Fjords) and determine if above conclusion holds (multiple regression).</li>
 <li>Estimate temperature (average lifetime thermal experience) from O18 values (use species-specific fractionation equation from Craig’s experimental work)</li>
 <li>Decide whether to age these fish or perform image analysis</li>
 <li>Compare with conclusions from genetics study</li>
-<li>Review literature for interpretation of C13 in fish otoliths</li>
 </ul>
 <p><span style="color:red;"><strong>Anything else I’m forgetting??</strong></span></p>
 </section>
